@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container-fluid">
+
+    <div class="row-fluid">
+        <div class="page-header">
+            <h2>Facebook Analyzer</h2>
+            <p class="lead">Public information abount the logged in facebook user.</p>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+
+
+        @*<div class="col-lg-6">
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="sizing-addon1">@@</span>
+                <input type="text" class="form-control" placeholder="Enter Username" aria-describedby="sizing-addon1" data-bind="value: UserName">
+            </div>
+
+
+        </div>*@
+
+        <div class="col-lg-3">
+
+            <button type="button" class="btn-lg btn-primary" data-bind="click: GetUserDetails">Get My Details</button>
+        </div>
+
+    </div>
+
+    <div class="row-fluid">
+
+        <section data-bind="if: isLoading">
+            <div class="center-block">
+                <img src="~/Content/themes/base/images/loading.gif" alt="Loading......" />
+            </div>
+        </section>
+
+        <section data-bind="ifnot: isLoading">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-bind="text: Email"></td>
+                        <td data-bind="text: FirstName"></td>
+                        <td data-bind="text: MiddleName"></td>
+                        <td data-bind="text: LastName"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var model = new FacebookViewModel();
+            ko.applyBindings(model);
+
+        });
+    </script>
+}
+
