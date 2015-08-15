@@ -53,9 +53,9 @@ namespace UserProfiler.Controllers
             var userCreds = Tweetinvi.CredentialsCreator.GetCredentialsFromVerifierCode(verifierCode, authorizationId);
             Auth.SetCredentials(userCreds);
 
-          
+
             Session["TwitterLogin"] = "YES";
-           
+
             return RedirectToAction("Home");
         }
 
@@ -63,7 +63,7 @@ namespace UserProfiler.Controllers
         {
             string message = "";
 
-         
+
 
             var user = Tweetinvi.User.GetUserFromScreenName(id);
             TwitterViewModel model = new TwitterViewModel
@@ -71,27 +71,29 @@ namespace UserProfiler.Controllers
                 ProfileName = user.Name,
                 FollowerCount = user.FollowersCount,
                 FollowingCount = user.FriendsCount,
+                FavouritesCount = user.FavouritesCount,
                 TweetList = new List<TweetViewModel>()
             };
 
             var searchParameter = new TweetSearchParameters("")
             {
-               Lang = Language.English,               
-               SearchQuery = "from:" + id
+                Lang = Language.English,
+                SearchQuery = "from:" + id
             };
 
             var tweets = Search.SearchTweets(searchParameter);
 
 
-            
+
             foreach (var item in tweets.OrderByDescending(res => res.CreatedAt))
             {
-                model.TweetList.Add(new TweetViewModel 
-                { 
+                model.TweetList.Add(new TweetViewModel
+                {
                     TweetText = item.Text,
                     CreatedAt = String.Format("{0:d/M/yyyy HH:mm:ss}", item.CreatedAt),
                     CreatedBy = id,
-                    HashTag = item.Hashtags.Any() ? item.Hashtags[0].Text : "" });  
+                    HashTag = item.Hashtags.Any() ? item.Hashtags[0].Text : ""
+                });
             }
 
 
