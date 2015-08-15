@@ -15,6 +15,7 @@ namespace UserProfiler.Models
 
         public int FollowingCount { get; set; }
 
+<<<<<<< HEAD
         public List<TweetViewModel> TweetList { get; set; }
     }
 
@@ -24,5 +25,8 @@ namespace UserProfiler.Models
         public string CreatedBy { get; set; }
         public string CreatedAt { get; set; }
         public string HashTag { get; set; }
+=======
+        public int FavouritesCount { get; set; }
+>>>>>>> origin/master
     }
 }

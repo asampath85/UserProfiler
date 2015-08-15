@@ -13,6 +13,7 @@
             self.isLoading(false);
             self.FollowersCount(data.FollowerCount);
             self.FollowingCount(data.FollowingCount);
+            self.FavouritesCount(data.FavouritesCount);
             self.ProfileName(data.ProfileName);
 
             self.Tweets(data.TweetList);

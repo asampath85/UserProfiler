@@ -82,6 +82,7 @@ namespace UserProfiler.Controllers
 
             var tweets = Search.SearchTweets(searchParameter);
 
+<<<<<<< HEAD
             
             foreach (var item in tweets.OrderByDescending(res => res.CreatedAt))
             {
@@ -96,6 +97,14 @@ namespace UserProfiler.Controllers
 
 
             
+=======
+            TwitterViewModel model = new TwitterViewModel {
+            ProfileName = user.Name,
+            FollowerCount = user.FollowersCount,
+            FollowingCount = user.FriendsCount,
+            FavouritesCount=user.FavouritesCount
+            };
+>>>>>>> origin/master
 
 
             return Json(model, JsonRequestBehavior.AllowGet);
