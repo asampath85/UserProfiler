@@ -7,7 +7,7 @@
         $.ajax({
             type: "GET",
             contentType: "application/json",
-            url: "/twitter/GetUserDetails?id=" + self.UserName()
+            url: "/SocialAnalyzer/twitter/GetUserDetails?id=" + self.UserName()
         }).done(function (data) {
             debugger;
             self.isLoading(false);
