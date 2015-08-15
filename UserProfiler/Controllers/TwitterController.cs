@@ -32,8 +32,8 @@ namespace UserProfiler.Controllers
                 return RedirectToAction("Home");
 
             var appCreds = new ConsumerCredentials(TwitterConsumerKey, TwitterConsumerSecret);
-            var redirectURL = "http://userprofiler.azurewebsites.net/twitter/Callback";
-            //var redirectURL = "http://127.0.0.1/SocialAnalyzer/twitter/Callback";
+            //var redirectURL = "http://userprofiler.azurewebsites.net/twitter/Callback";
+            var redirectURL = "http://127.0.0.1/SocialAnalyzer/twitter/Callback";
             var url = Tweetinvi.CredentialsCreator.GetAuthorizationURL(appCreds, redirectURL);
 
             return Redirect(url);
@@ -73,7 +73,8 @@ namespace UserProfiler.Controllers
             TwitterViewModel model = new TwitterViewModel {
             ProfileName = user.Name,
             FollowerCount = user.FollowersCount,
-            FollowingCount = user.FriendsCount
+            FollowingCount = user.FriendsCount,
+            FavouritesCount=user.FavouritesCount
             };
 
 

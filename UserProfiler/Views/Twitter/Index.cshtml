@@ -10,7 +10,7 @@
             <div class="row-fluid">
                 <div class="page-header">
                     <h2>Twitter Analyzer</h2>
-                    <p class="lead">Public information abount the given twitter user.</p>
+                    <p class="lead">Public information about the given twitter user.</p>
                 </div>
             </div>
    
@@ -49,6 +49,7 @@
                             <th>Name</th>
                             <th>Followers Count</th>
                             <th>Following Count</th>
+                            <th>Favourites Count</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +57,7 @@
                             <td data-bind="text: ProfileName()"></td>
                             <td data-bind="text: FollowersCount"></td>
                             <td data-bind="text: FollowingCount"></td>
+                            <td data-bind="text: FavouritesCount"></td>
                         </tr>
                     </tbody>
                 </table>

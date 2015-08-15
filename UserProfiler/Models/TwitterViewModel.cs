@@ -12,5 +12,7 @@ namespace UserProfiler.Models
         public int FollowerCount { get; set; }
 
         public int FollowingCount { get; set; }
+
+        public int FavouritesCount { get; set; }
     }
 }
