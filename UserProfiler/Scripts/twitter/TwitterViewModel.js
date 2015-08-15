@@ -15,6 +15,8 @@
             self.FollowingCount(data.FollowingCount);
             self.ProfileName(data.ProfileName);
 
+            self.Tweets(data.TweetList);
+
         }).error(function (ex) {
             self.isLoading(false);
             alert("Error");
@@ -22,8 +24,12 @@
 
 
         debugger;
-        //self.References(DummyProfile);
+      
         
+    };
+
+    self.SetSelectedTweet = function(item){
+        this.SelectedTweet(item);
     };
 
     self.isLoading = ko.observable(false);
@@ -31,24 +37,13 @@
     self.UserName = ko.observable();
     self.ProfileName = ko.observable("");
     self.FollowersCount = ko.observable();
-    self.FollowingCount = ko.observable();
-    // Public data properties
+    self.FollowingCount = ko.observable();    
     self.Followers = ko.observableArray([]);
     self.Following = ko.observableArray([]);
 
+    self.SelectedTweet = ko.observable();
+    self.Tweets = ko.observableArray();
+
+
 };
 
-//var DummyProfile = [
-//    {
-//        "ProfileId": 1,
-//        "FirstName": "Anand",
-//        "LastName": "Pandey",
-//        "Email": "anand@anandpandey.com"
-//    },
-//    {
-//        "ProfileId": 2,
-//        "FirstName": "John",
-//        "LastName": "Cena",
-//        "Email": "john@cena.com"
-//    }
-//]

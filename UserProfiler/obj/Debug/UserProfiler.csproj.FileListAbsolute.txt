@@ -92,3 +92,4 @@ F:\Git\UserProfiler\UserProfiler\bin\System.Web.WebPages.Razor.xml
 F:\Git\UserProfiler\UserProfiler\obj\Debug\UserProfiler.csproj.App.config
 F:\Git\UserProfiler\UserProfiler\obj\Debug\UserProfiler.dll
 F:\Git\UserProfiler\UserProfiler\obj\Debug\UserProfiler.pdb
+F:\Git\UserProfiler\UserProfiler\obj\Debug\UserProfiler.csprojResolveAssemblyReference.cache

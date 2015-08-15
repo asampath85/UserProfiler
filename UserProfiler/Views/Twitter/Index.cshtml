@@ -62,23 +62,31 @@
             </section>
 
 </div>
+
+        <div class="row-fluid">
+            <div class="list-group" data-bind="foreach: Tweets">
+                <a href="#" class="list-group-item" data-bind="css: {active: $parent.SelectedTweet() == $data}, click: $parent.SetSelectedTweet.bind($parent)">
+                    <h4 class="list-group-item-heading" data-bind="text: CreatedBy + ' - ' + CreatedAt"></h4>
+                    <p class="list-group-item-text" data-bind="text: TweetText"></p>
+                </a>
+            </div>
+        </div>
             </div>
 
-<div id="menu">
+@*<div id="menu">
     <div class="panel list-group">
-        <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">MESSAGES <span class="label label-info">5</span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
-        <div id="sm" class="sublinks collapse">
-            <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> inbox</a>
-            <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> sent</a>
+        <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Tweets <span class="label label-info">5</span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
+        <div id="sm" class="collapse">
+           sdfsdsdf sdfdsfsdf
         </div>
         <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sl" data-parent="#menu">TASKS <span class="glyphicon glyphicon-tag pull-right"></span></a>
         <div id="sl" class="sublinks collapse">
             <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> saved tasks</a>
             <a class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span> add new task</a>
         </div>
-        <a href="#" class="list-group-item">ANOTHER LINK ...<span class="glyphicon glyphicon-stats pull-right"></span></a>
+       
     </div>
-</div>
+</div>*@
        
 
 
