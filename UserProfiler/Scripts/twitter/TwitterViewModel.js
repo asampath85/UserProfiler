@@ -13,7 +13,6 @@
             self.isLoading(false);
             self.FollowersCount(data.FollowerCount);
             self.FollowingCount(data.FollowingCount);
-            self.FavouritesCount(data.FavouritesCount);
             self.ProfileName(data.ProfileName);
 
             self.Tweets(data.TweetList);
@@ -38,7 +37,8 @@
     self.UserName = ko.observable();
     self.ProfileName = ko.observable("");
     self.FollowersCount = ko.observable();
-    self.FollowingCount = ko.observable();    
+    self.FollowingCount = ko.observable();
+    self.FavouritesCount = ko.observable();
     self.Followers = ko.observableArray([]);
     self.Following = ko.observableArray([]);
 

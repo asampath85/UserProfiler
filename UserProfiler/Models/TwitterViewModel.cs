@@ -15,6 +15,8 @@ namespace UserProfiler.Models
 
         public int FollowingCount { get; set; }
 
+        public int FavouritesCount { get; set; }
+
         public List<TweetViewModel> TweetList { get; set; }
     }
 
