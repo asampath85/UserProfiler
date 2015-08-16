@@ -249,6 +249,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\UserProfiler.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Images\FacebookIcon.png" />
+    <Content Include="Images\Linkedin-icon.png" />
+    <Content Include="Images\tweetbutton.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\facebook\FacebookViewModel.js" />

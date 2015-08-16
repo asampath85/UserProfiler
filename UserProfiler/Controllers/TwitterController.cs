@@ -32,7 +32,7 @@ namespace UserProfiler.Controllers
                 return RedirectToAction("Home");
 
             var appCreds = new ConsumerCredentials(TwitterConsumerKey, TwitterConsumerSecret);
-            //var redirectURL = "http://userprofiler.azurewebsites.net/twitter/Callback";
+           // var redirectURL = "http://userprofiler.azurewebsites.net/twitter/Callback";
             var redirectURL = "http://127.0.0.1/SocialAnalyzer/twitter/Callback";
             var url = Tweetinvi.CredentialsCreator.GetAuthorizationURL(appCreds, redirectURL);
 
