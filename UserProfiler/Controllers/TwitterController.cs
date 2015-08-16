@@ -56,11 +56,13 @@ namespace UserProfiler.Controllers
 
             Session["TwitterLogin"] = "YES";
 
+
             return RedirectToAction("Home");
         }
 
         public JsonResult GetUserDetails(string id, string key, string geo)
         {
+
             string message = "";
             TwitterViewModel model = new TwitterViewModel { TweetList = new List<TweetViewModel>() };
 
@@ -77,9 +79,12 @@ namespace UserProfiler.Controllers
             string query = string.IsNullOrEmpty(key) ? "" : key + " ";
             query += string.IsNullOrEmpty(id) ? "" : "from:" + id;
 
+
+
             var searchParameter = new TweetSearchParameters("")
             {
                 Lang = Language.English,
+
                 SearchQuery = query.TrimEnd()
             };
 
@@ -88,10 +93,8 @@ namespace UserProfiler.Controllers
                 string[] result = geo.Split(',');
                 searchParameter.GeoCode = new GeoCode(double.Parse(result[0].TrimEnd()), double.Parse(result[1].TrimEnd()), double.Parse(result[2].TrimEnd()), DistanceMeasure.Miles);
             }
-
+           
             var tweets = Search.SearchTweets(searchParameter);
-
-
 
             foreach (var item in tweets.OrderByDescending(res => res.CreatedAt))
             {
@@ -106,6 +109,41 @@ namespace UserProfiler.Controllers
 
 
 
+
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetCityTweets(string cityName)
+        {
+                       
+            TwitterViewModel model = new TwitterViewModel
+            {
+                ProfileName = string.Empty,
+                FollowerCount = 0,
+                FollowingCount = 0,
+                TweetList = new List<TweetViewModel>()
+            };
+
+            var searchParameter = new TweetSearchParameters("")
+            {
+                Lang = Language.English,
+                //hard coding the geo location for newyork
+                GeoCode = Geo.GenerateGeoCode(Geo.GenerateCoordinates(-74.006, 40.742), 1000, DistanceMeasure.Miles)
+            };
+            var tweets = Search.SearchTweets(searchParameter);
+
+
+
+            foreach (var item in tweets.OrderByDescending(res => res.CreatedAt))
+            {
+                model.TweetList.Add(new TweetViewModel
+                {
+                    TweetText = item.Text,
+                    CreatedAt = String.Format("{0:d/M/yyyy HH:mm:ss}", item.CreatedAt),
+                    CreatedBy = item.CreatedBy.Id.ToString(),
+                    HashTag = item.Hashtags.Any() ? item.Hashtags[0].Text : ""
+                });
+            }
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }

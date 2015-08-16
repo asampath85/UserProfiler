@@ -1,0 +1,50 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	UserProfiler/Controllers/TwitterController.cs
+	UserProfiler/Scripts/twitter/TwitterViewModel.js
+	UserProfiler/Views/Twitter/Index.cshtml
+	UserProfiler/bin/UserProfiler.dll
+	UserProfiler/bin/UserProfiler.pdb
+	UserProfiler/obj/Debug/UserProfiler.dll
+	UserProfiler/obj/Debug/UserProfiler.pdb
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 6 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   ../../../.gitignore
+#	new file:   ../../../UserProfiler.v11.suo
+#	modified:   ../../../UserProfiler.v12.suo
+#	modified:   ../../../UserProfiler/Controllers/TwitterController.cs
+#	new file:   ../../../UserProfiler/Images/FacebookIcon.png
+#	new file:   ../../../UserProfiler/Images/Linkedin-icon.png
+#	new file:   ../../../UserProfiler/Images/tweetbutton.png
+#	modified:   ../../../UserProfiler/Scripts/twitter/TwitterViewModel.js
+#	modified:   ../../../UserProfiler/Views/Twitter/Index.cshtml
+#	new file:   ../../../UserProfiler/bin/System.Net.Http.Formatting.dll
+#	new file:   ../../../UserProfiler/bin/System.Net.Http.Formatting.xml
+#	new file:   ../../../UserProfiler/bin/System.Web.Http.WebHost.dll
+#	new file:   ../../../UserProfiler/bin/System.Web.Http.WebHost.xml
+#	new file:   ../../../UserProfiler/bin/System.Web.Http.dll
+#	new file:   ../../../UserProfiler/bin/System.Web.Http.xml
+#	modified:   ../../../UserProfiler/bin/UserProfiler.dll
+#	modified:   ../../../UserProfiler/bin/UserProfiler.pdb
+#	modified:   ../../../UserProfiler/obj/Debug/UserProfiler.csproj.FileListAbsolute.txt
+#	new file:   ../../../UserProfiler/obj/Debug/UserProfiler.csprojResolveAssemblyReference.cache
+#	modified:   ../../../UserProfiler/obj/Debug/UserProfiler.dll
+#	modified:   ../../../UserProfiler/obj/Debug/UserProfiler.pdb
+#
+
