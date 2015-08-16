@@ -7,7 +7,7 @@
 <div class="row-fluid">
     <div class="page-header">
 
-        <h2 style="color: #4099ff">Twitter Analyzer  <img src="~/Images/tweetbutton.png" width="40" height="30" /></h2> It will get the tweets based on given input
+        <h2 style="color: #4099ff">Twitter Analyzer  <img src="~/Images/Twitter_bird_icon.png" width="40" height="30" /></h2> It will get the tweets based on given input
 
     </div>
 </div>
@@ -35,12 +35,12 @@
             <input type="text" class="form-control" placeholder="Location" aria-describedby="sizing-addon1" data-bind="value: GeoAddress">
         </div>
     </div>
-    <div class="col-xs-1" style="padding:0px">
-        <div class="short-div" ><span class="input-group-addon" id="sizing-addon1" data-bind="text: 'Lati:' + GeoLatitude()"></span></div>
-        <div class="short-div" ><span class="input-group-addon" id="sizing-addon1" data-bind="text: 'Logi:' + GeoLongitude()"></span></div>
-    </div>
+    @*<div class="col-xs-1" style="padding:0px">
+        <div class="short-div"><span class="input-group-addon" id="sizing-addon1" data-bind="text: 'Lati:' + GeoLatitude()"></span></div>
+        <div class="short-div"><span class="input-group-addon" id="sizing-addon1" data-bind="text: 'Logi:' + GeoLongitude()"></span></div>
+    </div>*@
 
-      <div class="col-xs-2">
+    <div class="col-xs-2">
 
         <button type="button" class="btn-lg btn-primary center-block" data-bind="click: GetUserDetails">Get Details</button>
     </div>
@@ -58,7 +58,7 @@
 
     <section data-bind="if: isLoading">
         <div class="center-block">
-            <img src="~/Content/themes/base/images/loading.gif" alt="Loading......"  width="100" height="100" />
+            <img src="~/Content/themes/base/images/loading.gif" alt="Loading......" width="100" height="100" />
         </div>
     </section>
 
@@ -67,28 +67,53 @@
         <div id="menu">
             <div class="panel list-group">
                 <a href="#" class="list-group-item active" data-toggle="collapse" data-target="#pd" data-parent="#menu">Personal Details <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-                <div id="pd" class="collapse">
-                    <div>
-                        <table class="table table-hover">
-                            <thead>
+                <section data-bind="if: isUser">
+                    <div id="pd" class="collapse">
+                        <div>
+                            <table class="table table-hover">
+                                <thead>
                                 <tr>
                                     <th>Name</th>
                                     <th>Followers Count</th>
                                     <th>Following Count</th>
                                     <th>Favourites Count</th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                                </thead>
+                                <tbody>
                                 <tr>
                                     <td data-bind="text: ProfileName()"></td>
                                     <td data-bind="text: FollowersCount"></td>
                                     <td data-bind="text: FollowingCount"></td>
                                     <td data-bind="text: FavouritesCount"></td>
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <a href="#" class="list-group-item active" data-toggle="collapse" data-target="#cd" data-parent="#menu">City Details <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                <section data-bind="if: isCity">
+                    <div id="cd" class="collapse">
+                        <div>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>City</th>
+                                        <th>Latitude</th>
+                                        <th>Longitude</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-bind="text: GeoAddress()"></td>
+                                        <td data-bind="text: GeoLatitude()"></td>
+                                        <td data-bind="text: GeoLongitude()"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
                 <a href="#" class="list-group-item active" data-toggle="collapse" data-target="#tw" data-parent="#menu">Tweets <span class="label label-info" data-bind='text: Tweets().length'>&nbsp;</span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
                 <div id="tw" class="collapse">
                     <div class="list-group" data-bind="foreach: Tweets">

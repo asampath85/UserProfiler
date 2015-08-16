@@ -47,6 +47,7 @@
     self.GetCityTweets = function () {
 
         self.isLoading(true);
+        self.isCity(true);
         $.ajax({
             type: "GET",
             contentType: "application/json",
@@ -69,7 +70,8 @@
     };
 
     self.isLoading = ko.observable(false);
-
+    self.isUser = ko.observable(true);
+    self.isCity = ko.observable(true);
 
     self.UserName = ko.observable("");
     self.Keyword = ko.observable("");

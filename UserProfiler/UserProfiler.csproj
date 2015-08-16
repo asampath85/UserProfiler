@@ -252,6 +252,7 @@
     <Content Include="Images\FacebookIcon.png" />
     <Content Include="Images\Linkedin-icon.png" />
     <Content Include="Images\tweetbutton.png" />
+    <Content Include="Images\Twitter_bird_icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\facebook\FacebookViewModel.js" />
