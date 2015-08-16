@@ -92,6 +92,7 @@ F:\Git\UserProfiler\UserProfiler\bin\System.Web.WebPages.Razor.xml
 F:\Git\UserProfiler\UserProfiler\obj\Debug\UserProfiler.csproj.App.config
 F:\Git\UserProfiler\UserProfiler\obj\Debug\UserProfiler.dll
 F:\Git\UserProfiler\UserProfiler\obj\Debug\UserProfiler.pdb
+<<<<<<< HEAD
 F:\vs2015Projects\UserProfiler\UserProfiler\bin\UserProfiler.dll.config
 F:\vs2015Projects\UserProfiler\UserProfiler\bin\UserProfiler.dll
 F:\vs2015Projects\UserProfiler\UserProfiler\bin\UserProfiler.pdb
