@@ -28,6 +28,26 @@
         
     };
 
+    self.GetCityTweets = function () {
+        
+        self.isLoading(true);
+        $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: "/SocialAnalyzer/twitter/GetCityTweets?cityName=" + self.CityName()
+        }).done(function (data) {
+            
+            self.isLoading(false);           
+            self.Tweets(data.TweetList);
+
+        }).error(function (ex) {
+            self.isLoading(false);
+            alert("Error");
+        });       
+
+
+    };
+
     self.SetSelectedTweet = function(item){
         this.SelectedTweet(item);
     };
@@ -35,6 +55,7 @@
     self.isLoading = ko.observable(false);
 
     self.UserName = ko.observable();
+    self.CityName = ko.observable();
     self.ProfileName = ko.observable("");
     self.FollowersCount = ko.observable();
     self.FollowingCount = ko.observable();

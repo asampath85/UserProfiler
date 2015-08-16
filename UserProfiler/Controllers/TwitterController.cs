@@ -55,15 +55,14 @@ namespace UserProfiler.Controllers
 
           
             Session["TwitterLogin"] = "YES";
-           
+
+                                  
             return RedirectToAction("Home");
         }
 
         public JsonResult GetUserDetails(string id)
         {
-            string message = "";
-
-         
+                   
 
             var user = Tweetinvi.User.GetUserFromScreenName(id);
             TwitterViewModel model = new TwitterViewModel
@@ -76,10 +75,9 @@ namespace UserProfiler.Controllers
 
             var searchParameter = new TweetSearchParameters("")
             {
-               Lang = Language.English,               
-               SearchQuery = "from:" + id
+                Lang = Language.English,
+                SearchQuery = "from:" + id,                
             };
-
             var tweets = Search.SearchTweets(searchParameter);
 
 
@@ -96,6 +94,41 @@ namespace UserProfiler.Controllers
 
 
 
+
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetCityTweets(string cityName)
+        {
+                       
+            TwitterViewModel model = new TwitterViewModel
+            {
+                ProfileName = string.Empty,
+                FollowerCount = 0,
+                FollowingCount = 0,
+                TweetList = new List<TweetViewModel>()
+            };
+
+            var searchParameter = new TweetSearchParameters("")
+            {
+                Lang = Language.English,
+                //hard coding the geo location for newyork
+                GeoCode = Geo.GenerateGeoCode(Geo.GenerateCoordinates(-74.006, 40.742), 1000, DistanceMeasure.Miles)
+            };
+            var tweets = Search.SearchTweets(searchParameter);
+
+
+
+            foreach (var item in tweets.OrderByDescending(res => res.CreatedAt))
+            {
+                model.TweetList.Add(new TweetViewModel
+                {
+                    TweetText = item.Text,
+                    CreatedAt = String.Format("{0:d/M/yyyy HH:mm:ss}", item.CreatedAt),
+                    CreatedBy = item.CreatedBy.Id.ToString(),
+                    HashTag = item.Hashtags.Any() ? item.Hashtags[0].Text : ""
+                });
+            }
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }
