@@ -53,45 +53,55 @@ namespace UserProfiler.Controllers
             var userCreds = Tweetinvi.CredentialsCreator.GetCredentialsFromVerifierCode(verifierCode, authorizationId);
             Auth.SetCredentials(userCreds);
 
-          
+
             Session["TwitterLogin"] = "YES";
-           
+
             return RedirectToAction("Home");
         }
 
-        public JsonResult GetUserDetails(string id)
+        public JsonResult GetUserDetails(string id, string key, string geo)
         {
             string message = "";
+            TwitterViewModel model = new TwitterViewModel { TweetList = new List<TweetViewModel>() };
 
-         
-
-            var user = Tweetinvi.User.GetUserFromScreenName(id);
-            TwitterViewModel model = new TwitterViewModel
+            if (!string.IsNullOrEmpty(id))
             {
-                ProfileName = user.Name,
-                FollowerCount = user.FollowersCount,
-                FollowingCount = user.FriendsCount,
-                TweetList = new List<TweetViewModel>()
-            };
+                var user = Tweetinvi.User.GetUserFromScreenName(id);
+
+                model.ProfileName = user.Name;
+                model.FollowerCount = user.FollowersCount;
+                model.FollowingCount = user.FriendsCount;
+
+            }
+
+            string query = string.IsNullOrEmpty(key) ? "" : key + " ";
+            query += string.IsNullOrEmpty(id) ? "" : "from:" + id;
 
             var searchParameter = new TweetSearchParameters("")
             {
-               Lang = Language.English,               
-               SearchQuery = "from:" + id
+                Lang = Language.English,
+                SearchQuery = query.TrimEnd()
             };
+
+            if(!string.IsNullOrEmpty(geo))
+            {
+                string[] result = geo.Split(',');
+                searchParameter.GeoCode = new GeoCode(double.Parse(result[0].TrimEnd()), double.Parse(result[1].TrimEnd()), double.Parse(result[2].TrimEnd()), DistanceMeasure.Miles);
+            }
 
             var tweets = Search.SearchTweets(searchParameter);
 
 
-            
+
             foreach (var item in tweets.OrderByDescending(res => res.CreatedAt))
             {
-                model.TweetList.Add(new TweetViewModel 
-                { 
+                model.TweetList.Add(new TweetViewModel
+                {
                     TweetText = item.Text,
                     CreatedAt = String.Format("{0:d/M/yyyy HH:mm:ss}", item.CreatedAt),
                     CreatedBy = id,
-                    HashTag = item.Hashtags.Any() ? item.Hashtags[0].Text : "" });  
+                    HashTag = item.Hashtags.Any() ? item.Hashtags[0].Text : ""
+                });
             }
 
 

@@ -7,7 +7,7 @@
         $.ajax({
             type: "GET",
             contentType: "application/json",
-            url: "/SocialAnalyzer/twitter/GetUserDetails?id=" + self.UserName()
+            url: "/SocialAnalyzer/twitter/GetUserDetails?id=" + self.UserName() + "&key=" + self.Keyword() + "&geo=" + self.GeoLocation()
         }).done(function (data) {
             debugger;
             self.isLoading(false);
@@ -34,7 +34,9 @@
 
     self.isLoading = ko.observable(false);
 
-    self.UserName = ko.observable();
+    self.UserName = ko.observable("");
+    self.Keyword = ko.observable("");
+    self.GeoLocation = ko.observable("");
     self.ProfileName = ko.observable("");
     self.FollowersCount = ko.observable();
     self.FollowingCount = ko.observable();
