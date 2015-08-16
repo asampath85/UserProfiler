@@ -9,8 +9,9 @@
 
     <div class="row-fluid">
         <div class="page-header">
-            <h2>Twitter Analyzer</h2>
-            <p class="lead">Public information about the given twitter user.</p>
+            <h2 style="color: #4099ff">Twitter Analyzer  <img src="~/Images/Twitter_bird_icon.png" width="40" height="30" /></h2>
+            
+            <p class="lead" style="color: #4099ff">Public information about the given twitter user.</p>
         </div>
     </div>
 
@@ -45,13 +46,13 @@
 
         <section data-bind="if: isLoading">
             <div class="center-block">
-                <img src="~/Content/themes/base/images/loading.gif" alt="Loading......" />
+                <img src="~/Content/themes/base/images/loading.gif" alt="Loading......" width="100" height="100" />
             </div>
         </section>
 
         <section data-bind="ifnot: isLoading">
             <div class="panel list-group">
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#pd" data-parent="#menu">Personal Details <span class="glyphicon glyphicon-eye-open pull-right"></span></a>
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#pd" data-parent="#menu">Personal Details <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
                 <div id="pd" class="collapse">
                     <div>
                         <table class="table table-hover">
@@ -76,7 +77,9 @@
                         </table>
                     </div>
                 </div>
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#tw" data-parent="#menu">Tweets <span class="label label-info" data-bind='text: Tweets().length'>&nbsp;</span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#tw" data-parent="#menu">Tweets
+                    <span class="label label-info" data-bind='text: Tweets().length'>&nbsp;</span> <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </a>
                 <div id="tw" class="collapse">
                     <div class="list-group" data-bind="foreach: Tweets">
                         <a href="#" class="list-group-item" data-bind="css: {active: $parent.SelectedTweet() == $data}, click: $parent.SetSelectedTweet.bind($parent)">
