@@ -7,7 +7,7 @@
         $.ajax({
             type: "GET",
             contentType: "application/json",
-            url: "/twitter/GetUserDetails?id=" + self.UserName() + "&key=" + self.Keyword() + "&geo=" + self.GeoLocation()
+            url: "/twitter/GetUserDetails?id=" + self.UserName() + "&key=" + self.Keyword() + "&geo=" + self.GeoLatitude() + "," + self.GeoLongitude() + ",1"
         }).done(function (data) {
             debugger;
             self.isLoading(false);
@@ -27,6 +27,21 @@
         debugger;
 
 
+    };
+
+    self.GetGeoLocation = function () {
+        debugger;
+        var geocoder = new google.maps.Geocoder();
+        var address = self.GeoAddress();
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                self.GeoLatitude(results[0].geometry.location.lat());
+                self.GeoLongitude(results[0].geometry.location.lng());                
+            } else {
+                alert("Geolocation api failed.");
+            }
+        });
     };
 
     self.GetCityTweets = function () {
@@ -58,7 +73,20 @@
 
     self.UserName = ko.observable("");
     self.Keyword = ko.observable("");
-    self.GeoLocation = ko.observable("");
+    self.GeoLatitude = ko.observable("");
+    self.GeoLongitude = ko.observable("");
+    self.GeoAddress = ko.observable("");
+
+    self.GeoAddress.subscribe(function () {
+        
+        if (self.GeoAddress().trim() == "")
+        {
+            self.GeoLatitude("");
+            self.GeoLongitude("");
+            return;
+        }
+        self.GetGeoLocation();
+    });
 
     self.CityName = ko.observable();
 

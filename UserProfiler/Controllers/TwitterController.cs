@@ -91,7 +91,10 @@ namespace UserProfiler.Controllers
             if(!string.IsNullOrEmpty(geo))
             {
                 string[] result = geo.Split(',');
-                searchParameter.GeoCode = new GeoCode(double.Parse(result[0].TrimEnd()), double.Parse(result[1].TrimEnd()), double.Parse(result[2].TrimEnd()), DistanceMeasure.Miles);
+                if (!string.IsNullOrEmpty(result[0].Trim()))
+                {
+                    searchParameter.GeoCode = new GeoCode(double.Parse(result[1].TrimEnd()), double.Parse(result[0].TrimEnd()), double.Parse(result[2].TrimEnd()), DistanceMeasure.Miles);
+                }
             }
            
             var tweets = Search.SearchTweets(searchParameter);
@@ -102,7 +105,7 @@ namespace UserProfiler.Controllers
                 {
                     TweetText = item.Text,
                     CreatedAt = String.Format("{0:d/M/yyyy HH:mm:ss}", item.CreatedAt),
-                    CreatedBy = id,
+                    CreatedBy = item.CreatedBy.Name,
                     HashTag = item.Hashtags.Any() ? item.Hashtags[0].Text : ""
                 });
             }
