@@ -7,7 +7,7 @@
         $.ajax({
             type: "GET",
             contentType: "application/json",
-            url: "/SocialAnalyzer/twitter/GetUserDetails?id=" + self.UserName() + "&key=" + self.Keyword() + "&geo=" + self.GeoLatitude() + "," + self.GeoLongitude() + ",1"
+            url: "/twitter/GetUserDetails?id=" + self.UserName() + "&key=" + self.Keyword() + "&geo=" + self.GeoLatitude() + "," + self.GeoLongitude() + ",1"
         }).done(function (data) {
             debugger;
             self.isLoading(false);
@@ -15,6 +15,23 @@
             self.FollowingCount(data.FollowingCount);
             self.FavouritesCount(data.FavouritesCount);
             self.ProfileName(data.ProfileName);
+
+            data.TweetList.forEach(function (element, index) {
+                
+                data.TweetList[index].TweetText = element.TweetText.replace(/Sexual/gi, '<span style="color: red; font-weight: bold">Sexual</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/Assault/gi, '<span style="color: red; font-weight: bold">Assault</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/Fined/gi, '<span style="color: red; font-weight: bold">Fined</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/Sex/gi, '<span style="color: red; font-weight: bold">Sex</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/Punishes/gi, '<span style="color: red; font-weight: bold">Punishes</span>');
+
+                data.TweetList[index].TweetText = element.TweetText.replace(/Safety/gi, '<span style="color: yellow; font-weight: bold">Safety</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/Questions/gi, '<span style="color: yellow; font-weight: bold">Questions</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/Risk/gi, '<span style="color: yellow; font-weight: bold">Risk</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/So hot/gi, '<span style="color: yellow; font-weight: bold">So hot</span>');
+
+                data.TweetList[index].TweetText = element.TweetText.replace(/Cooler/gi, '<span style="color: green; font-weight: bold">Cooler</span>');
+                data.TweetList[index].TweetText = element.TweetText.replace(/Great/gi, '<span style="color: green; font-weight: bold">Great</span>');
+            });
 
             self.Tweets(data.TweetList);
 

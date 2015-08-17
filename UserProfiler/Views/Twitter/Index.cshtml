@@ -35,10 +35,10 @@
             <input type="text" class="form-control" placeholder="Location" aria-describedby="sizing-addon1" data-bind="value: GeoAddress">
         </div>
     </div>
-    @*<div class="col-xs-1" style="padding:0px">
+    <div class="col-xs-1" style="padding:0px">
         <div class="short-div"><span class="input-group-addon" id="sizing-addon1" data-bind="text: 'Lati:' + GeoLatitude()"></span></div>
         <div class="short-div"><span class="input-group-addon" id="sizing-addon1" data-bind="text: 'Logi:' + GeoLongitude()"></span></div>
-    </div>*@
+    </div>
 
     <div class="col-xs-2">
 
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </section>
-                <a href="#" class="list-group-item active" data-toggle="collapse" data-target="#cd" data-parent="#menu">City Details <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                @*<a href="#" class="list-group-item active" data-toggle="collapse" data-target="#cd" data-parent="#menu">City Details <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
                 <section data-bind="if: isCity">
                     <div id="cd" class="collapse">
                         <div>
@@ -113,14 +113,14 @@
                             </table>
                         </div>
                     </div>
-                </section>
+                </section>*@
                 <a href="#" class="list-group-item active" data-toggle="collapse" data-target="#tw" data-parent="#menu">Tweets <span class="label label-info" data-bind='text: Tweets().length'>&nbsp;</span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
                 <div id="tw" class="collapse">
                     <div class="list-group" data-bind="foreach: Tweets">
                         @*<a href="#" class="list-group-item" data-bind="css: {active: $parent.SelectedTweet() == $data}, click: $parent.SetSelectedTweet.bind($parent)">*@
                         <a href="#" class="list-group-item">
                             <h4 class="list-group-item-heading" data-bind="text: CreatedBy + ' - ' + CreatedAt"></h4>
-                            <p class="list-group-item-text" data-bind="text: TweetText"></p>
+                            <p class="list-group-item-text" data-bind="html: TweetText"></p>
                         </a>
                     </div>
                 </div>
