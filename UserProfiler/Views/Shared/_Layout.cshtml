@@ -7,6 +7,10 @@
     <title>Your Website &bull; @ViewBag.Title</title>
 
     @Styles.Render("~/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/highchart")
+    
 </head>
 <body>
 
@@ -28,7 +32,7 @@
                 <li>@Html.ActionLink("Twitter", "Index", "Twitter")</li>
                 <li>@Html.ActionLink("LinkedIn", "Index", "LinkedIn")</li>
                 <li>@Html.ActionLink("Facebook", "Index", "Facebook")</li>
-
+                <li>@Html.ActionLink("HighChartsSample", "Index", "HighChartsSample")</li>
             </ul>
         </div>
     </nav>
