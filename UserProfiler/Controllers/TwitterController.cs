@@ -18,10 +18,10 @@ namespace UserProfiler.Controllers
     public class TwitterController : Controller
     {
 
-        //private const string TwitterConsumerKey = "yeztpKZcCqNBQLEWoondDcvH7";
-        //private const string TwitterConsumerSecret = "0kqgCZ1ZzJUHk7VO7XkYwonKVYVxIFX9n5xmgXbBlDHrvdZHVk";
-        private const string TwitterConsumerKey = "unZjcnD6BB0vbU5TfTiXPGnVe";
-        private const string TwitterConsumerSecret = "7VoiPTrbqaq1vnuu87U4CAbYDyfiqJwlSanN6LvzGkfQ43f1fj";
+        private const string TwitterConsumerKey = "yeztpKZcCqNBQLEWoondDcvH7";
+        private const string TwitterConsumerSecret = "0kqgCZ1ZzJUHk7VO7XkYwonKVYVxIFX9n5xmgXbBlDHrvdZHVk";
+        //private const string TwitterConsumerKey = "unZjcnD6BB0vbU5TfTiXPGnVe";
+        //private const string TwitterConsumerSecret = "7VoiPTrbqaq1vnuu87U4CAbYDyfiqJwlSanN6LvzGkfQ43f1fj";
 
         //
         // GET: /Twitter/
@@ -32,8 +32,8 @@ namespace UserProfiler.Controllers
                 return RedirectToAction("Home");
 
             var appCreds = new ConsumerCredentials(TwitterConsumerKey, TwitterConsumerSecret);
-           // var redirectURL = "http://userprofiler.azurewebsites.net/twitter/Callback";
-            var redirectURL = "http://127.0.0.1/SocialAnalyzer/twitter/Callback";
+            var redirectURL = "http://userprofiler.azurewebsites.net/twitter/Callback";
+            //var redirectURL = "http://127.0.0.1/SocialAnalyzer/twitter/Callback";
             var url = Tweetinvi.CredentialsCreator.GetAuthorizationURL(appCreds, redirectURL);
 
             return Redirect(url);
