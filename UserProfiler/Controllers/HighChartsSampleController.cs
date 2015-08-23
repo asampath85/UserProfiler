@@ -49,10 +49,12 @@ namespace UserProfiler.Controllers
                 Bar = new PlotOptionsBar
                 {
                     DataLabels = new PlotOptionsBarDataLabels{Enabled = true},
-                    PointWidth = 12,
-                    GroupPadding = 0.1,
+                    PointWidth = 10,
+                    GroupPadding = 1,
+                    PointPadding = 0,
                     Shadow = true,
-                    BorderWidth = 2
+                    BorderWidth = 2,
+                    BorderColor = Color.FloralWhite
                 }
             });
             chart.SetSeries(new[]
