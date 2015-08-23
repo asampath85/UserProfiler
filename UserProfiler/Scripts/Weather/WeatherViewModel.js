@@ -10,7 +10,7 @@
         $.ajax({
             type: "GET",
             contentType: "application/json",
-            url: "/SocialAnalyzer/weather/GetCityWeatherDetails?id=" + self.CityName()
+            url: "/weather/GetCityWeatherDetails?id=" + self.CityName()
         }).done(function (data) {
 
             self.isLoading(false);
