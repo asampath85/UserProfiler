@@ -16,7 +16,7 @@ namespace UserProfiler
             bundles.Add(new StyleBundle("~/css")
                             .Include("~/Content/bootstrap.css")
                             .Include("~/Content/bootstrap-theme.css")
-                            .Include("~/Content/site.css")
+                            //.Include("~/Content/site.css")
                             );
         }
 
@@ -28,6 +28,7 @@ namespace UserProfiler
                 .Include("~/Scripts/Highcharts-4.0.1/js/highcharts.js")
                 .Include("~/Scripts/knockout-2.2.0.js")
                 .Include("~/Scripts/twitter/TwitterViewModel.js")
+                .Include("~/Scripts/Weather/WeatherViewModel.js")
                 .Include("~/Scripts/facebook/FacebookViewModel.js")
                 .Include("~/Scripts/bootstrap.js"));
 

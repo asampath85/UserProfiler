@@ -43,10 +43,6 @@
     <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="DotNet.Highcharts, Version=4.0.0.0, Culture=neutral, PublicKeyToken=88854f873df851bf, processorArchitecture=MSIL">
-      <HintPath>..\packages\DotNet.Highcharts.4.0\lib\DotNet.Highcharts.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Facebook">
       <HintPath>..\packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
     </Reference>
@@ -175,16 +171,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FacebookController.cs" />
-    <Compile Include="Controllers\HighChartsSampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LinkedinController.cs" />
     <Compile Include="Controllers\TwitterController.cs" />
+    <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FacebookViewModel.cs" />
-    <Compile Include="Models\HighChartsSampleModel.cs" />
     <Compile Include="Models\TwitterViewModel.cs" />
+    <Compile Include="Models\WeatherViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +202,102 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\200d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\200n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\201d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\201n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\202d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\202n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\210d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\210n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\211d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\211n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\212d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\212n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\221d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\221n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\230d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\230n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\231d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\231n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\232d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\232n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\300d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\300n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\301d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\301n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\302d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\302n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\310d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\310n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\311d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\311n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\312d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\312n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\321d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\321n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\500d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\500n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\501d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\501n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\502d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\502n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\503d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\503n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\504d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\504n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\511d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\511n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\520d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\520n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\521d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\521n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\522d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\522n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\600d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\600n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\601d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\601n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\602d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\602n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\611d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\611n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\621d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\621n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\701d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\701n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\711d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\711n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\721d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\721n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\731d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\731n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\741d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\741n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\800d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\800n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\801d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\801n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\802d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\802n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\803d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\803n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\804d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\804n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\900d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\900n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\901d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\901n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\902d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\902n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\903d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\903n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\904d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\904n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\905d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\905n.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\906d.png" />
+    <Content Include="Content\themes\base\images\WeatherIcons\906n.png" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\jquery.ui.accordion.css" />
     <Content Include="Content\themes\base\jquery.ui.all.css" />
@@ -313,6 +405,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\twitter\TwitterViewModel.js" />
+    <Content Include="Scripts\Weather\WeatherViewModel.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -329,10 +422,12 @@
     <Content Include="Views\Twitter\Index.cshtml" />
     <Content Include="Views\Linkedin\Index.cshtml" />
     <Content Include="Views\Facebook\Index.cshtml" />
-    <Content Include="Views\HighChartsSample\Index.cshtml" />
+    <Content Include="Views\Weather\Index.cshtml" />
+    <Content Include="Views\Weather\WeatherDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\HighChartsSample\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

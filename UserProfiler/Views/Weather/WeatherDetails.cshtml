@@ -1,0 +1,36 @@
+﻿@model UserProfiler.Models.WeatherDetails
+
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>MaxTemperature</th>
+                <th>MinTemperature</th>
+                <th>Humidity</th>
+                <th>Description</th>
+                <th>Icon</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.WeatherData)
+            {
+                <tr>
+
+                    <td>@item.WeatherDay</td>
+                    <td>@item.MaxTemperature</td>
+                    <td>@item.MinTemperature</td>
+                    <td>@item.Humidity</td>
+                    <td>@item.Weather</td>
+                    <td>
+                        <img src= "@Url.Content(item.WeatherIcon)" width="60" height="50"/></td>
+
+                </tr>
+                                    
+            }
+
+
+        </tbody>
+    </table>
+</div>
