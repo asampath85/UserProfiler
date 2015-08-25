@@ -33,12 +33,12 @@ namespace UserProfiler.Controllers
             var averageScore = highchartSample.Select(i => new object[] { i.AverageScore }).ToArray();
 
             var chart = new Highcharts("chart");
-            chart.InitChart(new Chart{DefaultSeriesType = ChartTypes.Bar});
-            chart.SetTitle(new Title {Text = "Risk Score Profiling"});
-            chart.SetSubtitle(new Subtitle {Text = "Risk predicting using social media"});
+            chart.InitChart(new Chart { DefaultSeriesType = ChartTypes.Bar});
+            chart.SetTitle(new Title { Text = "Risk Score Profiling" });
+            chart.SetSubtitle(new Subtitle { Text = "Risk predicting using social media" });
             chart.SetXAxis(new XAxis { Categories = xDataParameters });
-            chart.SetYAxis(new YAxis{ Title = new YAxisTitle{Text = "Months"}});
-            chart.SetLegend(new Legend{ Enabled = true,});
+            chart.SetYAxis(new YAxis { Title = new YAxisTitle { Text = "Months" }});
+            chart.SetLegend(new Legend { Enabled = true, });
             chart.SetTooltip(new Tooltip
             {
                 Enabled = true,
@@ -46,14 +46,15 @@ namespace UserProfiler.Controllers
             });
             chart.SetPlotOptions(new PlotOptions
             {
+                Series = new PlotOptionsSeries() { Stacking = Stackings.Normal },
                 Bar = new PlotOptionsBar
                 {
-                    DataLabels = new PlotOptionsBarDataLabels{Enabled = true},
-                    PointWidth = 10,
-                    GroupPadding = 1,
-                    PointPadding = 0,
+                    DataLabels = new PlotOptionsBarDataLabels { Enabled = true ,Color = Color.White},
+                    //PointWidth = 10,
+                    //GroupPadding = 1,
+                    //PointPadding = 0,
                     Shadow = true,
-                    BorderWidth = 2,
+                    BorderWidth = 1,
                     BorderColor = Color.FloralWhite
                 }
             });
@@ -63,7 +64,7 @@ namespace UserProfiler.Controllers
                 new Series{Name ="Average Score",Data = new Data(averageScore),Color=Color.Orange}, 
                 new Series{Name ="Bad Score",Data = new Data(badScore),Color = Color.Red}, 
             });
-            
+
             return View(chart);
         }
 
