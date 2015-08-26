@@ -1,6 +1,4 @@
-﻿using System.Security.AccessControl;
-
-namespace UserProfiler.Models
+﻿namespace UserProfiler.Models
 {
     public class HighChartsSampleModel
     {
@@ -15,5 +13,8 @@ namespace UserProfiler.Models
 
         public double BadScore { get; set; }
 
+        public double ActualScore { get; set; }
+
     }
+    
 }
