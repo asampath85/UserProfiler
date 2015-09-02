@@ -10,6 +10,14 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/highchart")
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+
+    <style>
+          #map {
+            width: 1200px;
+            height: 500px;
+        }
+    </style>
     
 </head>
 <body>
@@ -34,6 +42,7 @@
                 <li>@Html.ActionLink("Facebook", "Index", "Facebook")</li>
                 <li>@Html.ActionLink("Weather", "Index", "Weather")</li>
                 <li>@Html.ActionLink("Report", "Index", "HighChartsSample")</li>
+                <li>@Html.ActionLink("Map", "Index", "GoogleMap")</li>
             </ul>
         </div>
     </nav>
@@ -76,7 +85,7 @@
     @Scripts.Render("~/js")
     @RenderSection("scripts", required: false)
 
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    
         
     <script type="text/javascript">  
         $(document).ready(function () {

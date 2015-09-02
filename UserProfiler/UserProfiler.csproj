@@ -175,6 +175,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FacebookController.cs" />
+    <Compile Include="Controllers\GoogleMapController.cs" />
     <Compile Include="Controllers\HighChartsSampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LinkedinController.cs" />
@@ -405,9 +406,12 @@
     <None Include="Properties\PublishProfiles\UserProfiler.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\check_IPL_Logo_7.png" />
+    <Content Include="Images\download.png" />
     <Content Include="Images\FacebookIcon.png" />
     <Content Include="Images\Linkedin-icon.png" />
     <Content Include="Images\tweetbutton.png" />
+    <Content Include="Images\twitter-5-512.jpg" />
+    <Content Include="Images\Twitter.ico" />
     <Content Include="Images\Twitter_bird_icon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -481,6 +485,7 @@
     <Content Include="Views\Weather\Index.cshtml" />
     <Content Include="Views\Weather\WeatherDetails.cshtml" />
     <Content Include="Views\HighChartsSample\Index.cshtml" />
+    <Content Include="Views\GoogleMap\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
