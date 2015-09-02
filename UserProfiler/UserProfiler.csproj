@@ -191,55 +191,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Autofac.dll" />
-    <Content Include="bin\Autofac.xml" />
-    <Content Include="bin\DotNet.Highcharts.dll" />
-    <Content Include="bin\Facebook.dll" />
-    <Content Include="bin\Facebook.xml" />
-    <Content Include="bin\Microsoft.Threading.Tasks.dll" />
-    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll" />
-    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml" />
-    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.xml" />
-    <Content Include="bin\Microsoft.Threading.Tasks.xml" />
-    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
-    <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
-    <Content Include="bin\System.Net.Http.Extensions.dll" />
-    <Content Include="bin\System.Net.Http.Extensions.xml" />
-    <Content Include="bin\System.Net.Http.Formatting.dll" />
-    <Content Include="bin\System.Net.Http.Formatting.xml" />
-    <Content Include="bin\System.Net.Http.Primitives.dll" />
-    <Content Include="bin\System.Net.Http.Primitives.xml" />
-    <Content Include="bin\System.Web.Http.dll" />
-    <Content Include="bin\System.Web.Http.WebHost.dll" />
-    <Content Include="bin\System.Web.Http.WebHost.xml" />
-    <Content Include="bin\System.Web.Http.xml" />
-    <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
-    <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\System.Web.WebPages.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\Tweetinvi.Controllers.dll" />
-    <Content Include="bin\Tweetinvi.Core.dll" />
-    <Content Include="bin\Tweetinvi.Credentials.dll" />
-    <Content Include="bin\Tweetinvi.dll" />
-    <Content Include="bin\Tweetinvi.Factories.dll" />
-    <Content Include="bin\Tweetinvi.Logic.dll" />
-    <Content Include="bin\Tweetinvi.Security.dll" />
-    <Content Include="bin\Tweetinvi.Streams.dll" />
-    <Content Include="bin\Tweetinvi.WebLogic.dll" />
-    <Content Include="bin\UserProfiler.dll" />
-    <Content Include="bin\UserProfiler.pdb" />
-    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -401,7 +352,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="bin\UserProfiler.dll.config" />
     <None Include="Properties\PublishProfiles\UserProfiler %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\UserProfiler.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -489,6 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
