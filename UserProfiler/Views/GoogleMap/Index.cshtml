@@ -35,7 +35,12 @@
         var address = $("#pinclode").val();
         var lat = "";
         var long = "";
-       
+        //var styles = [{
+        //    stylers: [
+        //        { hue: "#00ffe6" }, { saturation: -20 }]},
+        //        { featureType: "road", elementType: "geometry", stylers: [{ lightness: 100 }, { visibility: "simplified" }] },
+        //        { featureType: "road", elementType: "labels", stylers: [{ visibility: "off" }] }
+        //];
         geocoder.geocode({ 'address': address }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 lat = (results[0].geometry.location.lat());
@@ -55,11 +60,15 @@
     function initialize(_lat, _long) {
         // Create the map.
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
+            zoom: 18,
             center: { lat: _lat, lng: _long },
-            mapTypeId: google.maps.MapTypeId.TERRAIN
-        });
-
+            mapTypeId: google.maps.MapTypeId.SATELLITE,
+            heading: 60,
+            tilt: 30,
+            //labels:true,
+            //setOptions:{styles: styles},
+    });
+        
         // Construct the circle for each value in citymap.
         // Note: We scale the area of the circle based on the population.
   
