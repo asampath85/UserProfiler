@@ -2,18 +2,32 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_CliqueLayoutPage.cshtml";
 }
-<br/>
-
+<br />
+<div class="row">
+    <div class="col-md-3">
+        <input type="text" id="apartment" class="form-control" placeholder="Apartment / House No." aria-describedby="sizing-addon2" data-bind="value: Apartment">
+    </div>
+    <div class="col-md-3">
+        <input type="text" id="street" class="form-control" placeholder="Street" aria-describedby="sizing-addon2" data-bind="value: Street">
+    </div>
+    <div class="col-md-3">
+        <input type="text" id="city" class="form-control" placeholder="City" aria-describedby="sizing-addon2" data-bind="value: CityName">
+    </div>
+    <div class="col-md-3">
+        <input type="text" id="state" class="form-control" placeholder="State" aria-describedby="sizing-addon2" data-bind="value: State">
+    </div>
+</div>
+<br />
 <div class="row">
     <div class="col-md-3">
         @*<div class="input-group input-group-lg"></div>*@
-        <input type="text" id="pinclode" class="form-control" placeholder="Pincode" aria-describedby="sizing-addon2" data-bind="value: CityName">
+        <input type="text" id="pinclode" class="form-control" placeholder="Pincode" aria-describedby="sizing-addon2" data-bind="value: CityName" onkeyup="javascript: TriggerSubmit();">
     </div>
     <div class="col-md-3">
-        <button type="button" class="btn-lg btn-primary btn-sm" onclick=" javscript:GetGeoLcation() ">Get Map</button>
+        <button id="getMapBtn" type="submit" class="btn-lg btn-primary btn-sm" onclick=" javscript:GetGeoLcation() ">Get Map</button>
     </div>
 </div>
-<br/>
+<br />
 <div class="row">
     <div class="col-md-8">
         <div id="map"></div>
@@ -24,6 +38,12 @@
 @section scripts{
 
     <script>
+        function TriggerSubmit() {
+            if (event.keyCode === 13) {
+                $("#getMapBtn").click();
+            }
+        }
+
         function GetGeoLcation() {
             debugger;
 
@@ -37,7 +57,7 @@
             //        { featureType: "road", elementType: "geometry", stylers: [{ lightness: 100 }, { visibility: "simplified" }] },
             //        { featureType: "road", elementType: "labels", stylers: [{ visibility: "off" }] }
             //];
-            geocoder.geocode({ 'address': address }, function (results, status) {
+            geocoder.geocode({ 'address': address }, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     lat = (results[0].geometry.location.lat());
                     long = (results[0].geometry.location.lng());
@@ -50,7 +70,6 @@
             });
 
 
-
         }
 
         function initialize(_lat, _long) {
@@ -59,12 +78,12 @@
                 zoom: 18,
                 center: { lat: _lat, lng: _long },
                 mapTypeId: google.maps.MapTypeId.HYBRID,
-                heading: 90,
-                tilt: 45
+                heading: 90
+                //tilt: 45
                 //labels:true,
                 //setOptions:{styles: styles},
             });
-
+            map.setTilt(45);
             // Construct the circle for each value in citymap.
             // Note: We scale the area of the circle based on the population.
 
