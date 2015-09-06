@@ -1,0 +1,80 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Selective - Free Alpha Studio Web Template</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="" />
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/highchart")
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+
+    <style>
+        #map {
+            width: 600px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body style="background-color: #000000">
+    <div id="page">
+        <div id="page2">
+            <div id="header">
+                <h1>
+                    <a href="#">Clique</a>
+                </h1>
+                <p id="subtitle">
+                    User based Shared Economy Insurance
+                </p>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Twitter", "Index", "Twitter")</li>
+                    <li>@Html.ActionLink("LinkedIn", "Index", "LinkedIn")</li>
+                    <li>@Html.ActionLink("Facebook", "Index", "Facebook")</li>
+                    <li>@Html.ActionLink("Weather", "Index", "Weather")</li>
+                    <li>@Html.ActionLink("Report", "Index", "HighChartsSample")</li>
+                    <li>@Html.ActionLink("Map", "Index", "GoogleMap")</li>
+                </ul>
+            </div>
+            <div id="content">
+                <div id="content2">
+                    <div id="content3">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                <p>
+                    Copyright &copy; 2015, designed by <a href="http://www.cognizant.com" target="_blank">
+                        Team Travelers
+                    </a> | <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/js")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav li a').click(function (e) {
+                debugger;
+                $(".nav").find(".active").removeClass("active");
+                $(this).parent().addClass("active");
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

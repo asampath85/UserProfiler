@@ -195,6 +195,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\bg.jpg" />
+    <Content Include="Content\images\content.gif" />
+    <Content Include="Content\images\content2.jpg" />
+    <Content Include="Content\images\content3.gif" />
+    <Content Include="Content\images\h2.gif" />
+    <Content Include="Content\images\menu.jpg" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\loading.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -353,6 +360,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Properties\PublishProfiles\UserProfiler %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\UserProfiler %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\UserProfiler.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\check_IPL_Logo_7.png" />
@@ -436,6 +444,7 @@
     <Content Include="Views\Weather\WeatherDetails.cshtml" />
     <Content Include="Views\HighChartsSample\Index.cshtml" />
     <Content Include="Views\GoogleMap\Index.cshtml" />
+    <Content Include="Views\Shared\_CliqueLayoutPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
